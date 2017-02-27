@@ -1,0 +1,43 @@
+//
+//  HXPrefixHeader.pch
+//  GlobalCloud
+//
+//  Created by hexuan on 16/12/22.
+//  Copyright © 2016年 hexuan. All rights reserved.
+//
+
+#ifndef HXPrefixHeader_pch
+#define HXPrefixHeader_pch
+
+#import "UIView+LBExtension.h"
+#import "AppDelegate.h"
+
+//屏幕宽度
+#define kDeviceWidth [UIScreen mainScreen].bounds.size.width
+//屏幕高度
+#define kDeviceHeight [UIScreen mainScreen].bounds.size.height
+//设置颜色
+#define UIColorFromRGBA(rgbValue, alphaValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0  green:((float)((rgbValue & 0x00FF00) >> 8))/255.0 blue:((float)(rgbValue & 0x0000FF))/255.0 alpha:alphaValue]
+
+
+
+#define kDefaultColor UIColorFromRGBA(0xD02346,1.0)
+
+#ifndef IMAGE_NAMED
+#define IMAGE_NAMED(__imageName__)\
+[UIImage imageNamed:__imageName__]
+#endif
+
+//日志输出
+#ifdef DEBUG
+#define HXLog(...) NSLog(__VA_ARGS__)
+#else
+#define HXLog(...)
+#endif
+
+#ifndef SYSTEM_FONT
+#define SYSTEM_FONT(__fontsize__)\
+[UIFont systemFontOfSize:__fontsize__]
+#endif
+
+#endif /* HXPrefixHeader_pch */
